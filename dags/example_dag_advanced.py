@@ -14,6 +14,7 @@ from airflow.operators.bash import BashOperator
 from airflow.operators.empty import EmptyOperator
 from airflow.operators.weekday import BranchDayOfWeekOperator
 
+
 # Used to label node edges in the Airflow UI
 from airflow.utils.edgemodifier import Label
 
@@ -53,13 +54,13 @@ BranchDayOfWeekOperator -
 
 # Reference data that defines "weekday" as well as the activity assigned to each day of the week
 DAY_ACTIVITY_MAPPING = {
-    "monday": {"is_weekday": True, "activity": "guitar lessons"},
-    "tuesday": {"is_weekday": True, "activity": "studying"},
-    "wednesday": {"is_weekday": True, "activity": "soccer practice"},
+    "monday": {"is_weekday": True, "activity": "python lessons"},
+    "tuesday": {"is_weekday": True, "activity": "studying..."},
+    "wednesday": {"is_weekday": True, "activity": "swim practice"},
     "thursday": {"is_weekday": True, "activity": "contributing to Airflow"},
-    "friday": {"is_weekday": True, "activity": "family dinner"},
-    "saturday": {"is_weekday": False, "activity": "going to the beach"},
-    "sunday": {"is_weekday": False, "activity": "sleeping in"},
+    "friday": {"is_weekday": True, "activity": "eating dinner"},
+    "saturday": {"is_weekday": False, "activity": "going to the beach???"},
+    "sunday": {"is_weekday": False, "activity": "sleeping in ZZZ"},
 }
 
 # The TaskFlow API is also used in a number of tasks within this DAG. Check out of the TaskFlow API tutorial
@@ -88,10 +89,12 @@ def _going_to_the_beach() -> dict[str, str]:
 def get_activity(day_name: str) -> str:
     activity_id = DAY_ACTIVITY_MAPPING[day_name]["activity"].replace(" ", "_")
 
-    if DAY_ACTIVITY_MAPPING[day_name]["is_weekday"]:
-        return f"weekday_activities.{activity_id}"
+    # if DAY_ACTIVITY_MAPPING[day_name]["is_weekday"]:
+    #     return f"weekday_activities.{activity_id}"
 
-    return f"weekend_activities.{activity_id}"
+    # return f"weekend_activities.{activity_id}"
+
+    return f"weekday_activities.{activity_id}" if DAY_ACTIVITY_MAPPING[day_name]["is_weekday"] else f"weekend_activities.{activity_id}"
 
 
 # This the TaskFlow API equivalent to the PythonVirtualEnvOperator:
@@ -123,7 +126,7 @@ def inviting_friends(subject: str, body: str) -> None:
     schedule="@daily",
     # Default settings applied to all tasks within the DAG; can be overwritten at the task level.
     default_args={
-        "owner": "community",  # Defines the value of the "owner" column in the DAG view of the Airflow UI
+        "owner": "hiep",  # Defines the value of the "owner" column in the DAG view of the Airflow UI
         "retries": 2,  # If a task fails, it will retry 2 times.
         "retry_delay": duration(
             minutes=3
