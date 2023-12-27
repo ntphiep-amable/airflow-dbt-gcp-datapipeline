@@ -1,3 +1,6 @@
 # Astro Runtime includes the following pre-installed providers packages: https://docs.astronomer.io/astro/runtime-image-architecture#provider-packages
-apache-airflow-providers-google==10.5.0
-soda-core-bigquery==3.0.45
+# apache-airflow-providers-google==10.5.0
+# soda-core-bigquery==3.0.45
+astronomer-cosmos[dbt-bigquery]==1.0.3 # install google + cosmos + dbt
+protobuf==3.20.0
+astro-run-dag # This package is needed for the astro run command. It will be removed before a deploy

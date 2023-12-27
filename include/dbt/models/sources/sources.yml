@@ -1,0 +1,11 @@
+
+# sources.yml
+version: 2
+
+sources:
+  - name: retail
+    database: hugo-page-7725d # Put the project id!
+
+    tables:
+      - name: raw_incoices
+      - name: country
