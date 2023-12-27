@@ -1,3 +1,9 @@
+Reference:
+- https://robust-dinosaur-2ef.notion.site/PUBLIC-Retail-Project-af398809b643495e851042fa293ffe5b
+- https://astro-sdk-python.readthedocs.io/en/stable/guides/operators.html
+- https://registry.astronomer.io/providers/apache-airflow-providers-google/versions/10.12.0/modules/LocalFilesystemToGCSOperator
+
+
 Overview
 ========
 
