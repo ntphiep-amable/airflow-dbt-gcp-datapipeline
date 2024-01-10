@@ -64,7 +64,6 @@ def retail():
         return check(scan_name, checks_subpath)
     
     
-    
     transform = DbtTaskGroup(
             group_id='transform',
             project_config=DBT_PROJECT_CONFIG,
@@ -81,8 +80,6 @@ def retail():
 
         return check(scan_name, checks_subpath)
     
-
-
     
 
     report = DbtTaskGroup(
@@ -114,5 +111,6 @@ def retail():
         report,
         check_report()
     )
+
 
 retail()
