@@ -10,7 +10,7 @@ from astro.files import File
 from astro.sql.table import Table, Metadata
 from astro.constants import FileType
 
-from include.dbt.cosmos_config import DBT_PROJECT_CONFIG, DBT_CONFIG
+from include.dbt_bigquery.cosmos_config import DBT_PROJECT_CONFIG, DBT_CONFIG
 from cosmos.airflow.task_group import DbtTaskGroup
 from cosmos.constants import LoadMode
 from cosmos.config import ProjectConfig, RenderConfig

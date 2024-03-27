@@ -1,8 +1,11 @@
 astro
-.git
-.env
+.git/
+env
 airflow_settings.yaml
 logs/
 .venv
 airflow.db
 airflow.cfg
+test/
+README.md
+requirements.txt
