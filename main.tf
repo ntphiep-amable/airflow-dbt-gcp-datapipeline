@@ -19,3 +19,5 @@ resource "google_storage_bucket" "retail" {
   location = "US"
   force_destroy = true
 }
+
+
