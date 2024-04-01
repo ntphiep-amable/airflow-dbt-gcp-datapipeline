@@ -115,11 +115,11 @@ The dataset used in this project is the [Online Retail Data Set](https://www.kag
 ```bash
 astro dev start
 ```
-To start the airflow server. The airflow UI will be available at https://localhost:8080
+To start the Airflow server. The airflow UI will be available at https://localhost:8080
 
 
 
 # Reference
-- https://robust-dinosaur-2ef.notion.site/PUBLIC-Retail-Project-af398809b643495e851042fa293ffe5b
-- https://astro-sdk-python.readthedocs.io/en/stable/guides/operators.html
-- https://registry.astronomer.io/providers/apache-airflow-providers-google/versions/10.12.0/modules/LocalFilesystemToGCSOperator
+- [Note](https://robust-dinosaur-2ef.notion.site/PUBLIC-Retail-Project-af398809b643495e851042fa293ffe5b)
+- [Astro Docs](https://astro-sdk-python.readthedocs.io/en/stable/guides/operators.html)
+- [Google Provider Docs](https://registry.astronomer.io/providers/apache-airflow-providers-google/versions/10.12.0/modules/LocalFilesystemToGCSOperator)
